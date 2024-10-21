@@ -8,7 +8,13 @@ export default {
   component: VirtualizedGrid
 };
 
-const virtualizedGridTemplate = args => {
+export interface IVirtualizedGridTemplateArgs {
+  itemsCount: number;
+  wrapperStyle: React.CSSProperties;
+  wrapperId: string;
+}
+
+const virtualizedGridTemplate = (args: IVirtualizedGridTemplateArgs) => {
   const [scrollToId, setScrollToId] = useState(null);
   const [lastScrolledId, setLastScrolledId] = useState(null);
   const [scrollToDisabled, setScrollToDisabled] = useState(false);
